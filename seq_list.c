@@ -24,11 +24,13 @@ void insert_list(seq_list *L, data_type x, int i)
 		printf("overflow");
 		return;
 	}
+	L->length++;
 	for(j = L->length; j > i; j--)
 	{
 		L->data[j] = L->data[--j];
 	}
-	L->data[--j] = x;
+	L->data[j] = x;
+	
 }
 
 
